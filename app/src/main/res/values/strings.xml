@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">LastFmValidTest</string>
+    <string name="app_name">Last Fm</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Misc -->
+    <string name="lastfm_api_url">https://ws.audioscrobbler.com</string>
+    <string name="generic_error">🤯 Something went wrong</string>
+
+    <!-- Search -->
+    <string name="search_hint">Search songs, artists, albums</string>
 </resources>
