@@ -29,7 +29,7 @@ como referencia el nombre de los casos de uso.
 a servicios, se mantienen lo mas limpios posible. Es decir tiene que ser dependiente de la informacion y operaciones que realize 
 la capa Presenter. 
 
-  3. Debe establecerse la capa Presenter en base a contratos o especificaciones (interfaces) que describen las validaciones y operaciones 
+  3. Se establecio la capa Presenter en base a contratos o especificaciones (interfaces) que describen las validaciones y operaciones 
 que seran controladas a traves de esta capa, en esta misma se hace una especie de orquestacion de las funcionalidades donde se controla 
 el inicio y fin, pero no debe realizarse logica de negocio, ni llamadas a ejecuciones en segundo plano y mucho menos operaciones de networking.
 
