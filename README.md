@@ -33,6 +33,7 @@ la capa Presenter.
 que seran controladas a traves de esta capa, en esta misma se hace una especie de orquestacion de las funcionalidades donde se controla 
 el inicio y fin, pero no debe realizarse logica de negocio, ni llamadas a ejecuciones en segundo plano y mucho menos operaciones de networking.
 
+![MVP](MVP-Android.png)
 
 
    
