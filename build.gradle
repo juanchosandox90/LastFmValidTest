@@ -23,7 +23,7 @@ ext {
     rxBindingVersion = "3.0.0-alpha2"
     dexcountVersion = "0.8.6"
     rxLifecycleVersion = "3.0.0"
-    lottieVersion = "2.8.0"
+    lottieVersion = "3.3.0"
 }
 
 buildscript {

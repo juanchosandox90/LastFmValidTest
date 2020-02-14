@@ -4,7 +4,13 @@
     <!-- Misc -->
     <string name="lastfm_api_url">https://ws.audioscrobbler.com</string>
     <string name="generic_error">🤯 Something went wrong</string>
-
     <!-- Search -->
     <string name="search_hint">Search songs, artists, albums</string>
+    <string name="search_empty_no_results">No results</string>
+    <string name="search_empty_message">Search for tracks, albums, or artists</string>
+    <string name="search_header_tracks">Tracks</string>
+    <string name="search_header_artists">Artists</string>
+    <string name="search_header_albums">Albums</string>
+    <!-- Artist Item -->
+    <string name="artist_listeners">%d listeners</string>
 </resources>
