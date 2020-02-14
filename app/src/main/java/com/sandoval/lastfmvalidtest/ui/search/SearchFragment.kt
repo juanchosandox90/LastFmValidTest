@@ -8,6 +8,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.sandoval.lastfmvalidtest.R
@@ -16,6 +17,7 @@ import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.Artist
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.MusicSearch
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.Track
 import com.sandoval.lastfmvalidtest.presentation.search.SearchPresenter
+import com.sandoval.lastfmvalidtest.ui.detail.TrackDetailFragmentArgs
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Section
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
@@ -48,14 +50,14 @@ class SearchFragment : Fragment(R.layout.search), SearchPresenter.View {
         results.visibility = View.VISIBLE
     }
 
+    override fun clearSearchText() {
+        searchText.setText("")
+    }
+
     override fun clearSearchResult() {
         musicSection.update(emptyList())
         tracksSection.update(emptyList())
         artistsSection.update(emptyList())
-    }
-
-    override fun clearSearchText() {
-        searchText.setText("")
     }
 
     override fun showLoading() {
@@ -83,20 +85,20 @@ class SearchFragment : Fragment(R.layout.search), SearchPresenter.View {
             .also(searchText::setAdapter)
     }
 
-    override fun showGenericError() {
-        Toast.makeText(requireContext(), R.string.generic_error, Toast.LENGTH_SHORT).show()
-    }
-
     override fun showTrackDetail(track: Track) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val args = TrackDetailFragmentArgs(trackId = track.mbid)
+
+        findNavController().navigate(R.id.action_searchFragment_to_trackDetailFragment, args.toBundle())
     }
 
     override fun showAlbumDetail(album: Album) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun showArtistDetail(artist: Artist) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun showGenericError() {
+        Toast.makeText(requireContext(), R.string.generic_error, Toast.LENGTH_SHORT).show()
     }
 
     private fun setupSearchText() {
@@ -124,6 +126,13 @@ class SearchFragment : Fragment(R.layout.search), SearchPresenter.View {
         }
 
         groupAdapter = GroupAdapter<ViewHolder>().also { it.add(musicSection) }
+        groupAdapter.setOnItemClickListener { item, _ ->
+            when (item) {
+                is TrackItem -> presenter.trackClicked(item.track)
+                is AlbumItem -> presenter.albumClicked(item.album)
+                is ArtistItem -> presenter.artistClicked(item.artist)
+            }
+        }
 
         results.apply {
             layoutManager = LinearLayoutManager(requireContext())
