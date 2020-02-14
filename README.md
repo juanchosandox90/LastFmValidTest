@@ -38,6 +38,13 @@ el inicio y fin, pero no debe realizarse logica de negocio, ni llamadas a ejecuc
 ### Bocetos
 
 ### Paleta de Colores
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#0277BD</color>
+    <color name="colorAccent">#F4511E</color>
+    <color name="colorDark">#121212</color>
+    <color name="colorLightDark">#1F1B24</color>
+    <color name="colorLighterDark">#332940</color>
+    <color name="white">#fff</color>
 
 ### Screenshots
 
