@@ -41,7 +41,7 @@ el inicio y fin, pero no debe realizarse logica de negocio, ni llamadas a ejecuc
 
 ### Screenshots
 
-### License
+### Licencia
 ```
    Copyright (C) 2020 Juan Camilo Sandoval Devia
 
