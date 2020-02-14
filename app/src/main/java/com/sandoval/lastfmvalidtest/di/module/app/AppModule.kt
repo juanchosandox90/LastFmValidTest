@@ -11,7 +11,7 @@ import org.koin.experimental.builder.singleBy
 
 val appModule = module {
 
-    single<AppExecutors> { AppExecutors() }
+    single { AppExecutors() }
 
     // Services
     singleBy<AppPreferences, AppPreferencesImpl>()
