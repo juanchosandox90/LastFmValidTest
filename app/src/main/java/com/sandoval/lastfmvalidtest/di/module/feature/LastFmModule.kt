@@ -3,7 +3,7 @@ package com.sandoval.lastfmvalidtest.di.module.feature
 import com.sandoval.lastfmvalidtest.BuildConfig
 import com.sandoval.lastfmvalidtest.R
 import com.sandoval.lastfmvalidtest.data.feature.lastfm.api.LastFmApiImpl
-import com.sandoval.lastfmvalidtest.data.feature.lastfm.api.LastFmRepositoryImpl
+import com.sandoval.lastfmvalidtest.data.feature.lastfm.LastFmRepositoryImpl
 import com.sandoval.lastfmvalidtest.data.feature.lastfm.api.interceptor.ApiKeyInterceptor
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.LastFmRepository
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.api.LastFmApi

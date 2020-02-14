@@ -1,4 +1,4 @@
-package com.sandoval.lastfmvalidtest.data.feature.lastfm.api
+package com.sandoval.lastfmvalidtest.data.feature.lastfm
 
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.LastFmRepository
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.api.LastFmApi

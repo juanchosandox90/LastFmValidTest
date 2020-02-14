@@ -1,6 +1,6 @@
 package com.sandoval.lastfmvalidtest.data
 
-import com.sandoval.lastfmvalidtest.data.feature.lastfm.api.LastFmRepositoryImpl
+import com.sandoval.lastfmvalidtest.data.feature.lastfm.LastFmRepositoryImpl
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.api.LastFmApi
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.*
 import io.mockk.MockKAnnotations
