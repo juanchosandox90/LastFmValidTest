@@ -5,5 +5,4 @@ abstract class Mapper<Input, Output> {
     open fun mapList(input: List<Input>): List<Output> {
         return input.map { map(it) }
     }
-
 }
