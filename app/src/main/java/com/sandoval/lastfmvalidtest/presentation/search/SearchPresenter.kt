@@ -106,6 +106,18 @@ class SearchPresenter(
         }
     }
 
+    fun trackClicked(track: Track) {
+        view?.showTrackDetail(track)
+    }
+
+    fun albumClicked(album: Album) {
+        view?.showAlbumDetail(album)
+    }
+
+    fun artistClicked(artist: Artist) {
+        view?.showArtistDetail(artist)
+    }
+
     interface View : BaseView {
         fun showSearchResult(searchResult: MusicSearch)
         fun clearSearchResult()
