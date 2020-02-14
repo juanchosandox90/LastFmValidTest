@@ -35,8 +35,6 @@ el inicio y fin, pero no debe realizarse logica de negocio, ni llamadas a ejecuc
 
 ![MVP](MVP-Android.png)
 
-### Bocetos
-
 ### Paleta de Colores
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#0277BD</color>
@@ -47,6 +45,10 @@ el inicio y fin, pero no debe realizarse logica de negocio, ni llamadas a ejecuc
     <color name="white">#fff</color>
 
 ### Screenshots
+
+![Screen01](screen_01.jpg)
+![Screen02](screen_02.jpg)
+![Screen03](screen_03.jpg)
 
 ### Licencia
 ```
