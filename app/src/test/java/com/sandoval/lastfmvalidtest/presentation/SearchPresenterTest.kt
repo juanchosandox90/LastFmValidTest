@@ -9,7 +9,6 @@ import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.Track
 import com.sandoval.lastfmvalidtest.presentation.search.SearchPresenter
 import com.sandoval.lastfmvalidtest.test.utils.createTestLifecycle
 import com.sandoval.lastfmvalidtest.test.utils.testAppExecutors
-import com.sandoval.lastfmvalidtest.view.base.SearchView
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
@@ -29,7 +28,7 @@ class SearchPresenterTest {
     private lateinit var addRecentQuery: AddRecentQuery
     private lateinit var getRecentQueries: RecentQueries
     private lateinit var presenter: SearchPresenter
-    private lateinit var view: SearchView
+    private lateinit var view: SearchPresenter.View
 
     @Before
     fun setUp() {

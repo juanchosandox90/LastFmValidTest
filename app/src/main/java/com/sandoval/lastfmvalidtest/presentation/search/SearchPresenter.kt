@@ -5,9 +5,12 @@ import com.sandoval.lastfmvalidtest.common.extensions.isEmpty
 import com.sandoval.lastfmvalidtest.domain.feature.common.preferences.interactor.AddRecentQuery
 import com.sandoval.lastfmvalidtest.domain.feature.common.preferences.interactor.RecentQueries
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.LastFmRepository
+import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.Album
+import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.Artist
 import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.MusicSearch
+import com.sandoval.lastfmvalidtest.domain.feature.lastfm.model.Track
 import com.sandoval.lastfmvalidtest.presenter.base.BasePresenter
-import com.sandoval.lastfmvalidtest.view.base.SearchView
+import com.sandoval.lastfmvalidtest.presenter.base.BaseView
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -18,12 +21,12 @@ class SearchPresenter(
     private val repository: LastFmRepository,
     private val getRecentQueries: RecentQueries,
     private val addRecentQuery: AddRecentQuery
-) : BasePresenter<SearchView>(executors) {
+) : BasePresenter<SearchPresenter.View>(executors) {
 
     private var queryJob: Job? = null
     private var result: MusicSearch? = null
 
-    override fun bind(view: SearchView) {
+    override fun bind(view: View) {
         super.bind(view)
         result?.let(this::handleResult) ?: run {
             view.showEmptyPlaceholder()
@@ -101,5 +104,20 @@ class SearchPresenter(
                 view?.showGenericError()
             }
         }
+    }
+
+    interface View : BaseView {
+        fun showSearchResult(searchResult: MusicSearch)
+        fun clearSearchResult()
+        fun clearSearchText()
+        fun showLoading()
+        fun hideLoading()
+        fun showEmptyPlaceholder()
+        fun showNoResultsPlaceholder()
+        fun hidePlaceholder()
+        fun setRecentQueries(queries: List<String>)
+        fun showTrackDetail(track: Track)
+        fun showAlbumDetail(album: Album)
+        fun showArtistDetail(artist: Artist)
     }
 }
